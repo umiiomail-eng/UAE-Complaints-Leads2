@@ -1,0 +1,30 @@
+:root {
+
+  /* UAE Colors */
+
+  --primary: #00732f;
+  --primary-dark: #005f27;
+
+  --red: #ce1126;
+
+  --black: #1d1d1d;
+
+  --white: #ffffff;
+
+  --bg: #f7f8fa;
+
+  --border: #e4e7ec;
+
+  --text: #202124;
+
+  --text-light: #5f6368;
+
+  --shadow: 0 15px 40px rgba(0,0,0,.08);
+
+  --radius: 18px;
+
+  --transition: .3s ease;
+
+  --container: 1280px;
+
+}
