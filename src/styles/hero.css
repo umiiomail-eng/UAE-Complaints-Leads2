@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
 
-  background-image: url("/8888.jpg");
+  background-image: url('/8888.jpg');
   background-size: cover;
   background-position: center;
 
