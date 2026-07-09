@@ -1,30 +1,17 @@
-:root {
+:root{
 
-  /* UAE Colors */
+--gold:#C8A24C;
 
-  --primary: #00732f;
-  --primary-dark: #005f27;
+--gold-dark:#A87F1C;
 
-  --red: #ce1126;
+--black:#151515;
 
-  --black: #1d1d1d;
+--white:#ffffff;
 
-  --white: #ffffff;
+--bg:#f8f8f5;
 
-  --bg: #f7f8fa;
+--border:#E8D6A7;
 
-  --border: #e4e7ec;
-
-  --text: #202124;
-
-  --text-light: #5f6368;
-
-  --shadow: 0 15px 40px rgba(0,0,0,.08);
-
-  --radius: 18px;
-
-  --transition: .3s ease;
-
-  --container: 1280px;
+--shadow:0 18px 60px rgba(0,0,0,.08);
 
 }

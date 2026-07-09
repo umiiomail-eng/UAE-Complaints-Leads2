@@ -1,0 +1,120 @@
+.how{
+padding:80px 20px;
+background:#fff;
+}
+.how-container{
+width:100%;
+max-width:1400px;
+margin:auto;
+}
+.how h2{
+text-align:center;
+font-size:34px;
+margin-bottom:12px;
+}
+.how-desc{
+text-align:center;
+color:#777;
+margin-bottom:50px;
+}
+.steps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+.step{
+position:relative;
+text-align:center;
+padding:25px 20px;
+background:#faf8f3;
+border-radius:22px;
+border:1px solid rgba(200,162,76,.18);
+
+/* حالة البداية قبل الظهور */
+opacity:0;
+transform:translateY(70px) scale(.82);
+transition:
+    opacity .8s cubic-bezier(.22,.9,.32,1),
+    transform .8s cubic-bezier(.34,1.56,.64,1),
+    box-shadow .4s ease,
+    border-color .4s ease;
+}
+
+/* الحالة بعد ما يدخل الكرت الشاشة */
+.step.in-view{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+
+/* أنيميشن عند تمرير الماوس */
+.step:hover{
+transform:translateY(-14px) scale(1.05);
+box-shadow:0 30px 55px rgba(200,162,76,.28);
+border-color:#C8A24C;
+}
+
+.step-number{
+position:absolute;
+top:-15px;
+right:20px;
+width:34px;
+height:34px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#C8A24C;
+color:white;
+font-weight:bold;
+transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+
+.step:hover .step-number{
+transform:scale(1.2) rotate(8deg);
+}
+
+.step-icon{
+width:55px;
+height:55px;
+margin:10px auto 18px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#C8A24C;
+border-radius:50%;
+transition:transform .45s cubic-bezier(.34,1.56,.64,1), background .35s ease, color .35s ease;
+}
+
+.step:hover .step-icon{
+transform:scale(1.18) rotate(-10deg);
+background:#C8A24C;
+color:#fff;
+}
+.step h3{
+font-size:19px;
+margin-bottom:10px;
+}
+.step p{
+font-size:14px;
+color:#666;
+line-height:1.8;
+}
+
+/* احترام إعدادات تقليل الحركة عند المستخدم */
+@media(prefers-reduced-motion: reduce){
+.step{
+    opacity:1;
+    transform:none;
+    transition:none;
+}
+}
+
+@media(max-width:900px){
+.steps{
+grid-template-columns:1fr;
+gap:20px;
+}
+.how{
+padding:60px 15px;
+}
+}

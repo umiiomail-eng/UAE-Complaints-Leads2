@@ -4,7 +4,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { getTrackingData } from "../services/tracking";
 import "../styles/form.css";
 import { useState } from "react";
-
+import {
+    User,
+    Phone,
+    Mail,
+    Building2,
+    FileText,
+    MapPin,
+    Shield
+} from "lucide-react";
 
 import { GOOGLE_SCRIPT_URL } from "../services/config";
 
@@ -210,10 +218,16 @@ function ComplaintForm() {
                             الاسم الكامل
                         </label>
 
-                        <input
-                            {...register("fullName")}
-                            placeholder="مثال: محمد أحمد"
-                        />
+                        <div className="input-wrapper">
+
+                            <User size={18} />
+
+                            <input
+                                {...register("fullName")}
+                                placeholder="مثال: محمد أحمد"
+                            />
+
+                        </div>
 
                         <p className="error">
                             {errors.fullName?.message}
@@ -229,10 +243,16 @@ function ComplaintForm() {
                             رقم الهاتف
                         </label>
 
-                        <input
-                            {...register("phone")}
-                            placeholder="+9715XXXXXXXX"
-                        />
+                        <div className="input-wrapper">
+
+                            <Phone size={18} />
+
+                            <input
+                                {...register("phone")}
+                                placeholder="+9715XXXXXXXX"
+                            />
+
+                        </div>
 
                         <p className="error">
                             {errors.phone?.message}
@@ -248,10 +268,16 @@ function ComplaintForm() {
                             البريد الإلكتروني
                         </label>
 
-                        <input
-                            {...register("email")}
-                            placeholder="you@example.com"
-                        />
+                        <div className="input-wrapper">
+
+                            <Mail size={18} />
+
+                            <input
+                                {...register("email")}
+                                placeholder="you@example.com"
+                            />
+
+                        </div>
 
                         <p className="error">
                             {errors.email?.message}
@@ -267,21 +293,27 @@ function ComplaintForm() {
                             الحالة
                         </label>
 
-                        <select {...register("status")}>
+                        <div className="input-wrapper">
 
-                            <option value="">
-                                اختر...
-                            </option>
+                            <Shield size={18} />
 
-                            {
-                                statuses.map(item =>
-                                    <option key={item}>
-                                        {item}
-                                    </option>
-                                )
-                            }
+                            <select {...register("status")}>
 
-                        </select>
+                                <option value="">
+                                    اختر...
+                                </option>
+
+                                {
+                                    statuses.map(item =>
+                                        <option key={item}>
+                                            {item}
+                                        </option>
+                                    )
+                                }
+
+                            </select>
+
+                        </div>
 
                         <p className="error">
                             {errors.status?.message}
@@ -298,21 +330,27 @@ function ComplaintForm() {
                         </label>
 
 
-                        <select {...register("emirate")}>
+                        <div className="input-wrapper">
 
-                            <option value="">
-                                اختر...
-                            </option>
+                            <MapPin size={18} />
 
-                            {
-                                emirates.map(item =>
-                                    <option key={item}>
-                                        {item}
-                                    </option>
-                                )
-                            }
+                            <select {...register("emirate")}>
 
-                        </select>
+                                <option value="">
+                                    اختر...
+                                </option>
+
+                                {
+                                    emirates.map(item =>
+                                        <option key={item}>
+                                            {item}
+                                        </option>
+                                    )
+                                }
+
+                            </select>
+
+                        </div>
 
 
                         <p className="error">
@@ -368,10 +406,16 @@ function ComplaintForm() {
                         </label>
 
 
-                        <input
-                            {...register("companyName")}
-                            placeholder="اسم الشركة المُشتكى عليها"
-                        />
+                        <div className="input-wrapper">
+
+                            <Building2 size={18} />
+
+                            <input
+                                {...register("companyName")}
+                                placeholder="اسم الشركة المُشتكى عليها"
+                            />
+
+                        </div>
 
 
                         <p className="error">
@@ -391,11 +435,17 @@ function ComplaintForm() {
                         </label>
 
 
-                        <textarea
-                            {...register("complaintDetails")}
-                            rows="6"
-                            placeholder="اشرح الشكوى بالتفصيل: ماذا حدث، متى، وأي دليل يدعم بلاغك."
-                        />
+                        <div className="textarea-wrapper">
+
+                            <FileText size={18} />
+
+                            <textarea
+                                {...register("complaintDetails")}
+                                rows="6"
+                                placeholder="اشرح الشكوى بالتفصيل: ماذا حدث، متى، وأي دليل يدعم بلاغك."
+                            />
+
+                        </div>
 
 
                         <p className="error">

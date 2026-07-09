@@ -270,3 +270,334 @@ text-align:center;
 font-weight:600;
 
 }
+
+
+/* =========================================
+   تعديلات جديدة: أيقونات الحقول
+   ========================================= */
+
+/* الفورم */
+.form-card{
+
+    background:white;
+
+    border-radius:26px;
+
+    padding:45px;
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.08);
+
+    border:1px solid rgba(200,162,76,.25);
+
+}
+
+/* الحقول */
+.input-wrapper,
+.textarea-wrapper{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+    border-radius:14px;
+
+    padding:0 18px;
+
+    transition:.35s;
+
+    box-sizing:border-box;
+
+    outline:none;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+/* الأيقونات */
+.input-wrapper svg,
+.textarea-wrapper svg{
+
+    color:#C8A24C;
+
+    flex-shrink:0;
+
+}
+
+/* الـ Input */
+.input-wrapper input,
+.input-wrapper select{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    outline:none !important;
+
+    background:none;
+
+    font-size:16px;
+
+    box-sizing:border-box;
+
+    padding:0;
+
+    -webkit-tap-highlight-color:transparent;
+
+    -webkit-appearance:none;
+
+    appearance:none;
+
+}
+
+/* الـ Textarea */
+.textarea-wrapper{
+
+    align-items:flex-start;
+
+    padding-top:18px;
+
+}
+
+.textarea-wrapper textarea{
+
+    width:100%;
+
+    border:none;
+
+    outline:none !important;
+
+    resize:none;
+
+    background:none;
+
+    padding:0 0 18px 0;
+
+    font-size:16px;
+
+    box-sizing:border-box;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+/* Focus */
+.input-wrapper:focus-within,
+.textarea-wrapper:focus-within{
+
+    border-color:#C8A24C;
+
+    box-shadow:
+
+        0 0 0 5px rgba(200,162,76,.12);
+
+    outline:none;
+
+}
+
+/* إلغاء الفوكس القديم عن الحقول الموجودة داخل wrapper
+   حتى ما يتعارض مع فوكس الـ wrapper نفسه، ولإلغاء أي بوردر/هالة زرقاء افتراضية من المتصفح */
+.input-wrapper input:focus,
+.input-wrapper select:focus,
+.textarea-wrapper textarea:focus{
+
+    border:none !important;
+
+    box-shadow:none !important;
+
+    outline:none !important;
+
+}
+
+/* إلغاء خلفية الـ Autofill الزرقاء/الصفراء يلي المتصفح بيفرضها
+   (Chrome/Edge ما بيسمحوا بتغيير background-color مباشرة، فبنستخدم box-shadow داخلي بنفس لون الخلفية) */
+.input-wrapper input:-webkit-autofill,
+.input-wrapper input:-webkit-autofill:hover,
+.input-wrapper input:-webkit-autofill:focus,
+.input-wrapper input:-webkit-autofill:active,
+.input-wrapper select:-webkit-autofill,
+.input-wrapper select:-webkit-autofill:hover,
+.input-wrapper select:-webkit-autofill:focus,
+.textarea-wrapper textarea:-webkit-autofill,
+.textarea-wrapper textarea:-webkit-autofill:hover,
+.textarea-wrapper textarea:-webkit-autofill:focus{
+
+    -webkit-box-shadow:0 0 0 1000px #fff inset !important;
+
+    box-shadow:0 0 0 1000px #fff inset !important;
+
+    -webkit-text-fill-color:#1f1f1f !important;
+
+    caret-color:#1f1f1f;
+
+    transition:background-color 5000s ease-in-out 0s;
+
+}
+
+/* فايرفوكس بيحترم background-color، فبنفرضها مباشرة */
+.input-wrapper input:autofill,
+.textarea-wrapper textarea:autofill{
+
+    background-color:#fff !important;
+
+    color:#1f1f1f !important;
+
+}
+
+/* الزر */
+.form-card button{
+
+    display:block;
+
+    width:100%;
+
+    height:60px;
+
+    margin-top:35px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#C8A24C;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+
+        0 12px 30px rgba(200,162,76,.35);
+
+}
+
+.form-card button:hover{
+
+    transform:translateY(-3px);
+
+    background:#B38A2E;
+
+    box-shadow:
+
+        0 18px 45px rgba(200,162,76,.45);
+
+}
+
+/* رسالة النجاح */
+.success-message{
+
+    margin-top:25px;
+
+    padding:18px;
+
+    background:#FFF8E7;
+
+    border:1px solid #C8A24C;
+
+    border-radius:12px;
+
+    color:#8A6818;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================
+   خلفية قسم الفورم — تدرج ناعم
+   ========================================= */
+
+.section-form{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:100px 20px;
+
+  
+
+    background: linear-gradient(
+        135deg,
+        #FBFAF6 0%,
+        #F5F0E3 35%,
+        #EEE2C2 70%,
+        #E6D2A2 100%
+    );
+
+}
+
+/* توهج ذهبي ناعم خلف الفورم لإضافة عمق */
+.section-form::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:radial-gradient(circle at 50% 30%, rgba(200,162,76,.16), transparent 60%);
+
+    z-index:0;
+
+}
+
+.section-form .form-card{
+
+    position:relative;
+
+    z-index:2;
+
+    background:#FFFDF8;
+
+}
+
+/* إطار مزدوج ذهبي داخل البطاقة — طابع شهادة/وثيقة رسمية */
+.section-form .form-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:14px;
+
+    border:1px solid rgba(200,162,76,.4);
+
+    border-radius:16px;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+@media(max-width:768px){
+
+.section-form{
+
+    padding:60px 16px;
+
+}
+
+.section-form .form-card::after{
+
+    inset:8px;
+
+}
+
+}
