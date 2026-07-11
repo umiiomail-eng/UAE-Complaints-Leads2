@@ -25,7 +25,7 @@ const schema = z.object({
         .min(3, "يرجى إدخال الاسم الكامل")
         .max(100, "الاسم طويل جدًا")
         .regex(
-          /^[\u0600-\u06FFa-zA-Z\s'.-]+$/,
+            /^[\u0600-\u06FFa-zA-Z\s'.-]+$/,
             "يسمح بالأحرف العربية والإنجليزية فقط"
         ),
 
@@ -474,17 +474,36 @@ function ComplaintForm() {
                     }
 
                 </button>
-                {
-                    success && (
+                {success && (
 
-                        <div className="success-message">
+                    <div className="success-overlay">
 
-                            تم إرسال البلاغ بنجاح، سيتم مراجعته والتواصل معك عند الحاجة.
+                        <div className="success-modal">
+
+                            <div className="success-icon">
+                                ✓
+                            </div>
+
+                            <h3>
+                                تم إرسال البلاغ بنجاح
+                            </h3>
+
+                            <p>
+                                نشكرك على إرسال البلاغ.<br />
+                                سيتم مراجعة البيانات والتواصل معك عند الحاجة.
+                            </p>
+
+                            <button
+                                onClick={() => setSuccess(false)}
+                            >
+                                حسناً
+                            </button>
 
                         </div>
 
-                    )
-                }
+                    </div>
+
+                )}
 
 
                 <p className="privacy">
